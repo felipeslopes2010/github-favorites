@@ -27,6 +27,10 @@ export class Favorites {
                 throw new Error('Usuário não encontrado!');
             }
 
+            if(user.name === null) {
+                user.name = user.login;
+            }
+
             this.entries = [user, ...this.entries];
 
             this.update();
@@ -75,7 +79,7 @@ export class FavoritesView extends Favorites {
 
             row.querySelector('.user-photo img').src = `https://www.github.com/${user.login}.png`;
             row.querySelector('.user-photo img').alt = `Imagem de Perfil do usuário ${user.name}`;
-            row.querySelector('.user-information a').href = `https://www.github.com/${user.login}`;
+            row.querySelector('.user a').href = `https://www.github.com/${user.login}`;
             row.querySelector('.username').textContent = `${user.name}`;
             row.querySelector('.user-login').textContent = `${user.login}`;
             row.querySelector('.public-repos').textContent = `${user.public_repos}`;
@@ -104,15 +108,15 @@ export class FavoritesView extends Favorites {
 
         tr.innerHTML = `
         <td class="user">
-            <div class="user-photo">
-                <img src="./assets/imgs/user-icon.png" alt="Imagem de perfil de usuário">
-            </div>
-            <div class="user-information">
-                <a href="https://www.github.com/maykbrito" target="_blank">
+            <a href="https://www.github.com/maykbrito" target="_blank">
+                <div class="user-photo">
+                    <img src="./assets/imgs/user-icon.png" alt="Imagem de perfil de usuário">
+                </div>
+                <div class="user-information">
                     <p class="username">Mayk Brito</p>
                     <span class="user-login">/maykbritto</span>
-                </a>
-            </div>
+                </div>
+            </a>
         </td>
         <td class="public-repos">
             123
