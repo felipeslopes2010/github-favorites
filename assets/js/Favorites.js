@@ -140,7 +140,7 @@ export class FavoritesView extends Favorites {
 
         addButton.onclick = () => {
             const { value } = document.querySelector('.search input');
-            this.add(value)
+            this.add(value);
         };
     }
 

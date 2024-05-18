@@ -35,7 +35,7 @@ button {
 .header-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8.8rem;
+    margin-bottom: 7.8rem;
 }
 
 .search {
@@ -93,19 +93,27 @@ table {
     width: 100%;
     border-radius: 1.2rem;
     overflow: hidden;
+    border: 1px solid #4A808C;
+    box-shadow: 0px 4px 30px rgba(74, 128, 140, 0.5);
 }
 
 thead {
     display: table;
     width: 100%;
     table-layout: fixed;
+    border-top: 1px solid #4A808C;
+    border-right: 1px solid #4A808C;
+    border-left: 1px solid #4A808C;
 }
 
 tbody {
     display: block;
-    max-height: 51.5rem;
+    max-height: 52.5rem;
     overflow-y: auto; 
     width: 100%;
+    border-right: 1px solid #4A808C;
+    border-left: 1px solid #4A808C;
+    border-bottom: 1px solid #4A808C;
 }
 
 tbody::-webkit-scrollbar {
@@ -142,11 +150,19 @@ tr {
 }
 
 tr:nth-child(odd) {
-    background: rgba(6, 22, 27, 0.50);
+    background: #06181C;
 }
 
 tr:nth-child(even) {
-    background: #06181C;
+    background: rgba(6, 22, 27, 0.50);
+    border-right: 1px solid #4A808C;
+    border-left: 1px solid #4A808C;
+    border-bottom: 1px solid #4A808C;
+}
+
+tbody > tr:nth-child(odd) {
+    border-bottom: 1px solid #4A808C;
+    border-right: 1px solid #4A808C;
 }
 
 td {
