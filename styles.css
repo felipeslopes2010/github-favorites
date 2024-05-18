@@ -21,7 +21,7 @@
 body {
     font-size: 1.6rem;
     background: var(--background-black);
-    max-width: 1120px;
+    max-width: 112rem;
     margin: 11.6rem auto;
     overflow-y: hidden;
 }
@@ -47,8 +47,8 @@ input {
     border: none;
     padding: 1.6rem;
     border-radius: .5rem;
-    width: 462px;
-    height: 48px;
+    width: 46.2rem;
+    height: 4.8rem;
     color: var(--input-color);
     font-size: 1.6rem;
 }
@@ -102,9 +102,24 @@ thead {
 
 tbody {
     display: block;
-    max-height: 400px;
+    max-height: 42rem;
     overflow-y: auto; 
     width: 100%;
+}
+
+tbody::-webkit-scrollbar {
+    width: 1.2rem;
+}
+
+tbody::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background-color: rgba(6, 22, 27, 1);
+    border-radius: .6rem;
+    border: .3rem solid transparent;
+    background-clip: content-box;
 }
 
 th, td {
@@ -153,6 +168,10 @@ td.user img {
     border-radius: 50%;
 }
 
+.user-information {
+    text-align: left;
+}
+
 .user a {
     text-decoration: none;
 }
@@ -160,7 +179,14 @@ td.user img {
 .username,
 .user-login {
     color: var(--table-data-color);
-    text-align: left;
+}
+
+.username {
+    font-weight: 700;
+}
+
+.user-login {
+    font-weight: 400;
 }
 
 td button {
