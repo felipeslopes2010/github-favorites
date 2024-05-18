@@ -16,6 +16,7 @@
     --table-border-color: #4A808C;
     --table-header-color: #E1E1E6;
     --remove-button-color: #F75A68;
+    --table-no-user-color: #4E5455;
 }
 
 body {
@@ -202,4 +203,22 @@ td button {
     color: var(--remove-button-color);
     font-size: 2rem;
     font-weight: 700;
+}
+
+.no-entries td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 51.5rem;
+    gap: 6rem;
+}
+
+.no-entries td p {
+    color: var(--table-no-user-color);
+    font-family: "Roboto Mono", monospace;
+    font-size: 4rem;
+}
+
+.hidden {
+    display: none;
 }

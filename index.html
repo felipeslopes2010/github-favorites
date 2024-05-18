@@ -8,10 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>GitFav</title>
     <link rel="stylesheet" href="./styles.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-        <script src="./main.js" type="module" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="./main.js" type="module" defer></script>
 </head>
 
 <body>
@@ -41,26 +39,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td class="user">
-                        <a href="https://www.github.com/maykbrito" target="_blank">
-                            <div class="user-photo">
-                                <img src="./assets/imgs/user-icon.png" alt="Imagem de perfil de usuário">
-                            </div>
-                            <div class="user-information">
-                                <p class="username">Mayk Brito</p>
-                                <span class="user-login">/maykbritto</span>
-                            </div>
-                        </a>
-                    </td>
-                    <td class="public-repos">
-                        123
-                    </td>
-                    <td class="followers">
-                        1234
-                    </td>
-                    <td>
-                        <button class="remove">Remover</button>
-                    </td>
+                    <tr class="no-entries">
+                        <td colspan="4">
+                            <img src="./assets/imgs/star.svg" alt="Estrela na tabela">
+                            <p>Nenhum favorito ainda</p>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </main>

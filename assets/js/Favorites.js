@@ -23,11 +23,11 @@ export class Favorites {
 
             const user = await GithubUser.search(username);
 
-            if(user.login === undefined) {
+            if (user.login === undefined) {
                 throw new Error('Usuário não encontrado!');
             }
 
-            if(user.name === null) {
+            if (user.name === null) {
                 user.name = user.login;
             }
 
@@ -36,8 +36,8 @@ export class Favorites {
             this.update();
 
             this.save();
-            
-        } catch(err) {
+
+        } catch (err) {
             alert(err.message);
         }
     }
@@ -47,7 +47,7 @@ export class Favorites {
     }
 
     delete(user) {
-        const filteredEntries = this.entries.filter(entry  => {
+        const filteredEntries = this.entries.filter(entry => {
             return entry.login !== user.login;
         });
 
@@ -90,15 +90,19 @@ export class FavoritesView extends Favorites {
 
                 if (isOk) {
                     this.delete(user);
+
+                    this.toggleNoEntriesDiv();
                 }
             };
 
             this.tbody.append(row);
+            
+            this.toggleNoEntriesDiv();
         });
     }
 
     removeAllTr() {
-        this.tbody.querySelectorAll('tr').forEach(tr => {
+        this.tbody.querySelectorAll('tr:not(.no-entries)').forEach(tr => {
             tr.remove();
         });
     }
@@ -138,5 +142,15 @@ export class FavoritesView extends Favorites {
             const { value } = document.querySelector('.search input');
             this.add(value)
         };
+    }
+
+    toggleNoEntriesDiv() {
+        if (this.entries.length === 0) {
+            this.tbody.querySelector('tr').classList.remove('hidden');
+        }
+
+        if(this.entries.length !== 0) {
+           this.tbody.querySelector('tr').classList.add('hidden');
+        }
     }
 }
