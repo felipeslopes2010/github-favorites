@@ -143,6 +143,7 @@ td.user {
     display: flex;
     align-items: center;
     gap: 1.6rem;
+    margin-left: 4rem;
 }
 
 
@@ -150,6 +151,16 @@ td.user img {
     height: 5.6rem;
     width: 5.6rem;
     border-radius: 50%;
+}
+
+.user a {
+    text-decoration: none;
+}
+
+.username,
+.user-login {
+    color: var(--table-data-color);
+    text-align: left;
 }
 
 td button {
