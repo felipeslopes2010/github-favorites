@@ -183,6 +183,7 @@ td.user img {
 
 .username {
     font-weight: 700;
+    min-width: max-content;
 }
 
 .user-login {
