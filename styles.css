@@ -23,6 +23,7 @@ body {
     background: var(--background-black);
     max-width: 1120px;
     margin: 11.6rem auto;
+    overflow-y: hidden;
 }
 
 button {
@@ -93,14 +94,35 @@ table {
     overflow: hidden;
 }
 
+thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto; 
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 1.6rem;
+}
+
 th {
     background-color: #092D38;
     font-size: 2rem;
     font-weight: 700;
-    line-height: 160%;
-    text-align: center;
-    padding: 1.6rem 2.4rem 1.6rem 4rem;
     color: var(--table-header-color);
+}
+
+tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
 tr:nth-child(odd) {
@@ -111,57 +133,23 @@ tr:nth-child(even) {
     background: #06181C;
 }
 
-th:first-child {
-    border-top-left-radius: 1.2rem;
-}
-
-th:last-child {
-    border-top-right-radius: 1.2rem;
-}
-
-tr:last-child > td:first-child {
-    border-bottom-left-radius: 1.2rem;
-    overflow: hidden;
-}
-
-tr:last-child > td:last-child {
-    border-bottom-right-radius: 1.2rem;
-    overflow: hidden; 
-}
-
 td {
     color: var(--table-data-color);
-    text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    line-height: 160%;
-}
-
-td span {
-    font-weight: 400;
 }
 
 td.user {
     display: flex;
     align-items: center;
     gap: 1.6rem;
-    padding: 2.4rem 2.4rem 2.4rem 4rem;
-    text-align: left;
 }
+
 
 td.user img {
     height: 5.6rem;
     width: 5.6rem;
     border-radius: 50%;
-}
-
-.user-information a {
-    color: var(--table-data-color);
-    text-decoration: none;
-}
-
-.user-information p {
-    margin-bottom: -0.8rem;
 }
 
 td button {
