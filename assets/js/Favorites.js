@@ -15,6 +15,8 @@ export class Favorites {
     async add(username) {
         try {
 
+            document.querySelector('.search input').value = '';
+
             const userExists = this.entries.find(entry => entry.login === username);
 
             if (userExists) {
@@ -140,7 +142,10 @@ export class FavoritesView extends Favorites {
 
         addButton.onclick = () => {
             const { value } = document.querySelector('.search input');
+            
             this.add(value);
+            
+            document.querySelector('.search input').value = '';
         };
     }
 
