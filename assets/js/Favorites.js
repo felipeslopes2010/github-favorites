@@ -98,7 +98,7 @@ export class FavoritesView extends Favorites {
             };
 
             this.tbody.append(row);
-            
+
             this.toggleNoEntriesDiv();
         });
     }
@@ -141,12 +141,14 @@ export class FavoritesView extends Favorites {
         const addButton = document.querySelector('.search button');
 
         addButton.onclick = () => {
-            const { value } = document.querySelector('.search input');
-            
-            this.add(value);
-            
-            document.querySelector('.search input').value = '';
+            this.addAndCleanInput();
         };
+
+        document.querySelector('.search input').addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                this.addAndCleanInput();
+            }
+        });
     }
 
     toggleNoEntriesDiv() {
@@ -154,8 +156,16 @@ export class FavoritesView extends Favorites {
             this.tbody.querySelector('tr').classList.remove('hidden');
         }
 
-        if(this.entries.length !== 0) {
-           this.tbody.querySelector('tr').classList.add('hidden');
+        if (this.entries.length !== 0) {
+            this.tbody.querySelector('tr').classList.add('hidden');
         }
+    }
+
+    addAndCleanInput() {
+        const { value } = document.querySelector('.search input');
+
+        this.add(value);
+
+        document.querySelector('.search input').value = '';
     }
 }
