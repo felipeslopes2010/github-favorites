@@ -23,7 +23,7 @@ body {
     font-size: 1.6rem;
     background: var(--background-black);
     max-width: 112rem;
-    margin: 11.6rem auto;
+    margin: 7.6rem auto;
     overflow-y: hidden;
 }
 
@@ -52,6 +52,11 @@ input {
     height: 4.8rem;
     color: var(--input-color);
     font-size: 1.6rem;
+    outline-color: var(--button-background);    
+}
+
+input:focus {
+    outline-color: var(--button-background);    
 }
 
 input::placeholder {
@@ -93,17 +98,13 @@ table {
     width: 100%;
     border-radius: 1.2rem;
     overflow: hidden;
-    border: 1px solid #4A808C;
-    box-shadow: 0px 4px 30px rgba(74, 128, 140, 0.5);
+    box-shadow: 0px 0px 0px 2pt rgba(74, 128, 140, 1);
 }
 
 thead {
     display: table;
     width: 100%;
     table-layout: fixed;
-    border-top: 1px solid #4A808C;
-    border-right: 1px solid #4A808C;
-    border-left: 1px solid #4A808C;
 }
 
 tbody {
@@ -111,9 +112,7 @@ tbody {
     max-height: 52.5rem;
     overflow-y: auto; 
     width: 100%;
-    border-right: 1px solid #4A808C;
-    border-left: 1px solid #4A808C;
-    border-bottom: 1px solid #4A808C;
+
 }
 
 tbody::-webkit-scrollbar {
@@ -149,19 +148,19 @@ tr {
     table-layout: fixed;
 }
 
-tr:nth-child(odd) {
-    background: #06181C;
-}
-
-tr:nth-child(even) {
-    background: rgba(6, 22, 27, 0.50);
-    border-right: 1px solid #4A808C;
-    border-left: 1px solid #4A808C;
-    border-bottom: 1px solid #4A808C;
-}
-
 tbody > tr:nth-child(odd) {
+    background: #06181C;
+    border-top: 1px solid #4A808C;
+    border-right: 1px solid #4A808C;
+}
+
+tbody > tr + tr:nth-child(odd) {
     border-bottom: 1px solid #4A808C;
+}
+
+tbody > tr:nth-child(even) {
+    background: rgba(6, 22, 27, 0.50);
+
     border-right: 1px solid #4A808C;
 }
 
